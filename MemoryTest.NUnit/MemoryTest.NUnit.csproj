@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Faultify.MemoryTest\Faultify.MemoryTest.csproj" />
+    <ProjectReference Include="..\MemoryTest\MemoryTest.csproj" />
   </ItemGroup>
 
 </Project>

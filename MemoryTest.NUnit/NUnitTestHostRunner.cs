@@ -20,7 +20,7 @@ namespace Faultify.MemoryTest.NUnit
         /// Checkout the following resource for possible configurations:
         /// <see href="https://github.com/nunit/nunit/blob/master/src/NUnitFramework/framework/Api/FrameworkPackageSettings.cs"></see>
         /// </summary>
-        public Dictionary<string, object> Settings { get; set; }
+        public Dictionary<string, object> Settings { get; set; } = new Dictionary<string, object>();
         
         public override async Task RunTestsAsync(CancellationToken token, HashSet<string> tests = null)
         {
