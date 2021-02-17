@@ -1,6 +1,6 @@
 ## Dotnet In Memory Assembly Testing
 
-[![Nuget](https://img.shields.io/nuget/v/MemoryTest.svg?color=blue&label=faultify&style=flat-square)](https://www.nuget.org/packages/MemoryTest/)
+[![Nuget](https://img.shields.io/nuget/v/MemoryTest.svg?color=blue&label=MemoryTest&style=flat-square)](https://www.nuget.org/packages/MemoryTest/)
 [![Nuget](https://img.shields.io/nuget/dt/MemoryTest.svg?style=flat-square)](https://www.nuget.org/packages/MemoryTest/)
 ![Memory Test CI](https://github.com/Faultify/MemoryTest/workflows/Memory%20Test%20CI/badge.svg)
 [![Join us on Discord](https://img.shields.io/discord/801802378721493044.svg?logo=discord)](https://discord.gg/8aKeQFtcnT) 
@@ -17,7 +17,7 @@ _the support for test assembly versions depends on backwards compadibility of th
 
 ## Getting Started
 
-- For an example check the [console demo](https://github.com/Faultify/MemoryTest/blob/main/Faultify.MemoryTest.Console/Program.cs). 
+- For an example check the [console demo](https://github.com/Faultify/MemoryTest/blob/main/MemoryTest.Console/Program.cs). 
 
 **1. Instantiate a Test Host Runner**
 
