@@ -10,8 +10,8 @@ namespace Faultify.MemoryTest
     public interface ITestHostRunner
     {
         /// <summary>
-        ///     Runs the given tests and returns the results.
-        ///     If no tests are passed then all tests will be ran.
+        ///     Runs the given tests asynchronously.
+        ///     If no tests are passed then all tests will be run.
         /// </summary>
         Task RunTestsAsync(CancellationToken token, HashSet<string> tests = null);
     }

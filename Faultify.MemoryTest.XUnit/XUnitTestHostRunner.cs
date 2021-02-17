@@ -9,11 +9,14 @@ using Xunit.Runners;
 
 namespace Faultify.MemoryTest.XUnit
 {
+    /// <summary>
+    /// XUnit in memory assembly test runner. 
+    /// </summary>
     public class XUnitTestHostRunner : TestHostRunner
     {
         private static readonly ManualResetEvent TestSessionFinished = new ManualResetEvent(false);
 
-        private readonly Dictionary<string, DateTime> testTime = new Dictionary<string, DateTime>();
+        private readonly Dictionary<string, DateTime> _testDurations = new Dictionary<string, DateTime>();
 
         public XUnitTestHostRunner(string testProjectAssemblyPath) : base(testProjectAssemblyPath)
         {
@@ -46,7 +49,7 @@ namespace Faultify.MemoryTest.XUnit
                 var assembly = alc.LoadFromAssemblyPath(assemblyPath);
 
                 using var runner = CreateRunner(tests, assembly.Location);
-
+                
                 runner.Start();
 
                 TestSessionFinished.WaitOne();
@@ -71,7 +74,7 @@ namespace Faultify.MemoryTest.XUnit
                 // Wait for assembly runner to finish.
                 // If we try to dispose while runner is executing,
                 // it will throw an error.
-                await Task.Delay(5);
+                await Task.Delay(5, token);
 
                 token.ThrowIfCancellationRequested();
             }
@@ -82,7 +85,7 @@ namespace Faultify.MemoryTest.XUnit
             var runner = AssemblyRunner.WithoutAppDomain(assemblyPath);
             runner.OnExecutionComplete = OnTestSessionEnd;
             runner.OnDiscoveryComplete = OnTestSessionStart;
-
+            
             runner.OnTestFailed = OnTestFailed;
             runner.OnTestPassed = OnTestPassed;
             runner.OnTestSkipped = OnTestSkipped;
@@ -99,7 +102,7 @@ namespace Faultify.MemoryTest.XUnit
 
         private (DateTime, DateTime) GetTestExecutionTime(string methodName, decimal executionTime)
         {
-            var startTime = testTime.GetValueOrDefault(methodName);
+            var startTime = _testDurations.GetValueOrDefault(methodName);
             return (startTime, startTime + TimeSpan.FromSeconds((double) executionTime));
         }
 
@@ -139,7 +142,7 @@ namespace Faultify.MemoryTest.XUnit
         {
             lock (this)
             {
-                testTime.Add(obj.TestDisplayName, DateTime.Now);
+                _testDurations.Add(obj.TestDisplayName, DateTime.Now);
             }
 
             OnTestCaseStart(new TestStart(obj.TypeName, obj.MethodName, obj.TestDisplayName,

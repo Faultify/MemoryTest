@@ -54,8 +54,8 @@ namespace Faultify.MemoryTest.Console
             var xunitHostRunner =
                 new XUnitTestHostRunner(
                     @"E:\programming\FaultifyNew\Faultify\Benchmark\Faultify.Benchmark.XUnit\bin\Debug\netcoreapp3.1\Faultify.Benchmark.XUnit.dll");
-            xunitHostRunner.TestCaseStart += OnTestCaseStart;
-            xunitHostRunner.TestCaseEnd += OnTestCaseEnd;
+            xunitHostRunner.TestStart += OnTestStart;
+            xunitHostRunner.TestEnd += OnTestEnd;
             xunitHostRunner.TestSessionStart += OnTestSessionStart;
             xunitHostRunner.TestSessionEnd += OnTestSessionEnd;
 
@@ -70,8 +70,8 @@ namespace Faultify.MemoryTest.Console
             var nunitHostRunner =
                 new NUnitTestHostRunner(
                     @"E:\programming\FaultifyNew\Faultify\Benchmark\Faultify.Benchmark.NUnit\bin\Debug\netcoreapp3.1\Faultify.Benchmark.NUnit.dll");
-            nunitHostRunner.TestCaseStart += OnTestCaseStart;
-            nunitHostRunner.TestCaseEnd += OnTestCaseEnd;
+            nunitHostRunner.TestStart += OnTestStart;
+            nunitHostRunner.TestEnd += OnTestEnd;
             nunitHostRunner.TestSessionStart += OnTestSessionStart;
             nunitHostRunner.TestSessionEnd += OnTestSessionEnd;
 
@@ -88,16 +88,16 @@ namespace Faultify.MemoryTest.Console
         private static void OnTestSessionEnd(object? sender, TestSessionEnd e)
         {
             Sb.AppendLine(
-                $"==== Test session end [{e.EndTime:hh:mm:ss t z}]: Passed: {e.Passed}, Failed: {e.Failed}, Skipped: {e.Skipped}, Run Result: {e.TestOutcome} ====\t");
+                $"==== Test session end [{e.EndTime:hh:mm:ss t z}]: Passed: {e.Passed}, Failed: {e.FailedTests}, Skipped: {e.Skipped}, Run Result: {e.TestOutcome} ====\t");
         }
 
-        private static void OnTestCaseEnd(object? sender, TestEnd e)
+        private static void OnTestEnd(object? sender, TestEnd e)
         {
             Sb.AppendLine(
                 $"[{e.TestOutcome}] Test Finish [{e.StartTime:hh:mm:ss t z}/{e.EndTime:hh:mm:ss t z}]: {e.TypeName} | {e.TestName}");
         }
 
-        private static void OnTestCaseStart(object? sender, TestStart e)
+        private static void OnTestStart(object? sender, TestStart e)
         {
             Sb.AppendLine($"Test case start: {e.TypeName} | {e.TestName}");
         }

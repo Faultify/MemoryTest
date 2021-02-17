@@ -1,5 +1,8 @@
 ﻿namespace Faultify.MemoryTest.TestInformation
 {
+    /// <summary>
+    /// Information about a test that started.
+    /// </summary>
     public readonly struct TestStart : ITestInfo
     {
         public TestStart(string testName, string typeName, string fullTestName, string fullTypeName)

@@ -6,6 +6,11 @@ using Faultify.MemoryTest.TestInformation;
 
 namespace Faultify.MemoryTest.NUnit
 {
+    /// <summary>
+    /// NUnit XML report parser.
+    ///
+    /// <seealso href="https://docs.nunit.org/articles/nunit-engine/extensions/Event-Listeners.html"/>
+    /// </summary>
     public class NUnitReportParser
     {
         private readonly string _report;
