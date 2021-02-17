@@ -1,3 +1,11 @@
+## Dotnet In Memory Assembly Testing
+
+[![Nuget](https://img.shields.io/nuget/v/faultify.svg?color=blue&label=faultify&style=flat-square)](https://www.nuget.org/packages/faultify/)
+[![Nuget](https://img.shields.io/nuget/dt/faultify.svg?style=flat-square)](https://www.nuget.org/packages/faultify/)
+![Memory Test CI](https://github.com/Faultify/MemoryTest/workflows/Memory%20Test%20CI/badge.svg)
+[![Join us on Discord](https://img.shields.io/discord/801802378721493044.svg?logo=discord)](https://discord.gg/8aKeQFtcnT) 
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Z8QK6XU749JB2)
+
 Memory Test presents an easy way to test dotnet assemblies, without external processes, in memory. This is achieved by invoking XUnit or NUnit directly instead of using `VsConsole` or `DotnetTest`. Memory Test provides a simple to use abstraction while at the same time exposing underlying framework details for usability purposes. 
 
 ## Features
