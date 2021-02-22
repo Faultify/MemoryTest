@@ -1,7 +1,7 @@
 ## Dotnet In Memory Assembly Testing
 
-[![Nuget](https://img.shields.io/nuget/v/faultify.svg?color=blue&label=faultify&style=flat-square)](https://www.nuget.org/packages/faultify/)
-[![Nuget](https://img.shields.io/nuget/dt/faultify.svg?style=flat-square)](https://www.nuget.org/packages/faultify/)
+[![Nuget](https://img.shields.io/nuget/v/MemoryTest.svg?color=blue&label=MemoryTest&style=flat-square)](https://www.nuget.org/packages/MemoryTest/)
+[![Nuget](https://img.shields.io/nuget/dt/MemoryTest.svg?style=flat-square)](https://www.nuget.org/packages/MemoryTest/)
 ![Memory Test CI](https://github.com/Faultify/MemoryTest/workflows/Memory%20Test%20CI/badge.svg)
 [![Join us on Discord](https://img.shields.io/discord/801802378721493044.svg?logo=discord)](https://discord.gg/8aKeQFtcnT) 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Z8QK6XU749JB2)
@@ -17,7 +17,7 @@ _the support for test assembly versions depends on backwards compadibility of th
 
 ## Getting Started
 
-- For an example check the [console demo](https://github.com/Faultify/MemoryTest/blob/main/Faultify.MemoryTest.Console/Program.cs). 
+- For an example check the [console demo](https://github.com/Faultify/MemoryTest/blob/main/MemoryTest.Console/Program.cs). 
 
 **1. Instantiate a Test Host Runner**
 
@@ -67,10 +67,10 @@ That's it. Enjoy testing!
 
 ## Configuring
 NUnit: 
-1. Provide [Settings](https://github.com/Faultify/MemoryTest/blob/main/Faultify.MemoryTest.NUnit/NUnitTestHostRunner.cs#L23)
-2. Add [NUnit Config File](https://docs.nunit.org/articles/nunit/technical-notes/usage/Configuration-Files.html) to the test assembly directory.
+- Provide [Settings](https://github.com/Faultify/MemoryTest/blob/main/Faultify.MemoryTest.NUnit/NUnitTestHostRunner.cs#L23)
+- Add [NUnit Config File](https://docs.nunit.org/articles/nunit/technical-notes/usage/Configuration-Files.html) to the test assembly directory.
 
 XUnit:
 
-1.Add [XUnit Config File](https://xunit.net/docs/configuration-files) to the test assembly directory.
+- Add [XUnit Config File](https://xunit.net/docs/configuration-files) to the test assembly directory.
 
