@@ -1,8 +1,27 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+
+		<PackageVersion>0.0.1</PackageVersion>
+		<PackageId>MemoryTest.NUnit</PackageId>
+		<Description>In Memory Assembly Testing</Description>
+
+		<Authors>Timon</Authors>
+		<ProjectUrl>https://github.com/Faultify/MemoryTest</ProjectUrl>
+		<PackageTags>Test;MemoryTest;InMemory;Testing</PackageTags>
+		<RepositoryUrl>https://github.com/Faultify/MemoryTest.git</RepositoryUrl>
+		<Title>In memory assembly test abstraction over NUnit.</Title>
+		<Product>Testing</Product>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.13.1" />

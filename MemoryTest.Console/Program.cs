@@ -70,10 +70,10 @@ namespace Faultify.MemoryTest.Console
             var nunitHostRunner =
                 new NUnitTestHostRunner(
                     @"E:\programming\FaultifyNew\Faultify\Benchmark\Faultify.Benchmark.NUnit\bin\Debug\netcoreapp3.1\Faultify.Benchmark.NUnit.dll");
-    nunitHostRunner.TestStart += OnTestStart;
-    nunitHostRunner.TestEnd += OnTestEnd;
-    nunitHostRunner.TestSessionStart += OnTestSessionStart;
-    nunitHostRunner.TestSessionEnd += OnTestSessionEnd;
+            nunitHostRunner.TestStart += OnTestStart;
+            nunitHostRunner.TestEnd += OnTestEnd;
+            nunitHostRunner.TestSessionStart += OnTestSessionStart;
+            nunitHostRunner.TestSessionEnd += OnTestSessionEnd;
 
             nunitHostRunner.RunTestsAsync(CancellationToken.None).Wait();
 
